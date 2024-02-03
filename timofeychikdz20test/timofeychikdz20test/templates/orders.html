@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Orders</title>
+</head>
+<body>
+    <h1>Orders</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Client Name</th>
+                <th>Order Name</th>
+                <th>Cost</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for client_name, orders in orders.items() %}
+                {% for order in orders %}
+                <tr>
+                    <td>{{client_name}}</td>
+                    <td>{{order.name}}</td>
+                    <td>{{order.cost}}</td>
+                    <td><a href="/delete_order/{{order.id}}">Delete</a></td>
+                    <td><a href="/update_order/{{order.id}}">Update</a></td>
+                </tr>
+                {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

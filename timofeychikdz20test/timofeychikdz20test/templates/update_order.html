@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Order</title>
+</head>
+<body>
+    <h1>Update Order</h1>
+    <form method="POST" action="/update_order/{{order.id}}">
+        <label for="name">Name:</label>
+        <input type="text" name="name" value="{{order.name}}"><br>
+        <label for="cost">Cost:</label>
+        <input type="text" name="cost" value="{{order.cost}}"><br>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>
